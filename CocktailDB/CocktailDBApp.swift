@@ -11,7 +11,8 @@ import SwiftUI
 struct CocktailDBApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let model = SearchViewModel(client: NetworkClient())
+            ContentView(model: model)
         }
     }
 }
