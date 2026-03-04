@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Search: NetworkRequest {
+struct SearchRequest: NetworkRequest {
     let method: HTTPMethod = .get
     let parameters: (any Encodable)? = nil
     var path: String {

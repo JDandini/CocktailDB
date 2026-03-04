@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DrinkResult: Decodable {
+struct SearchReponse: Decodable {
     let drinks: [Drink]
     
     enum CodingKeys: String, CodingKey {

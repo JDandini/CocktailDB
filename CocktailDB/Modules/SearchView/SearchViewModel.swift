@@ -15,8 +15,8 @@ final class SearchViewModel {
     }
     
     func searchForDrink(drinkName: String)async throws -> [Drink] {
-        let request = Search(searchTerm: drinkName)
-        let result: DrinkResult = try await client.data(for: request)
+        let request = SearchRequest(searchTerm: drinkName)
+        let result: SearchReponse = try await client.data(for: request)
         return result.drinks
     }
 }
