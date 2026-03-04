@@ -12,7 +12,7 @@ struct CocktailDBApp: App {
     var body: some Scene {
         WindowGroup {
             let model = SearchViewModel(client: NetworkClient())
-            ContentView(model: model)
+            SearchView(model: model)
         }
     }
 }
