@@ -16,17 +16,19 @@ struct SearchView: View {
     var body: some View {
         NavigationStack {
             List(drinks) { drink in
-                HStack {
-                    KFImage(URL(string: drink.imageURL ?? ""))
-                        .resizable()
-                        .roundCorner(
-                            radius: .widthFraction(0.5),
-                            roundingCorners: [.topLeft, .bottomRight]
-                        )
-                        .serialize(as: .PNG)
-                        .frame(width: 64, height: 64)
-                    Text(drink.name)
+                NavigationLink {
+                    DrinkDetail(viewModel: DetailViewModel(drink: drink))
+                } label: {
+                    HStack {
+                        KFImage(URL(string: drink.imageURL ?? ""))
+                            .resizable()
+                            .serialize(as: .PNG)
+                            .frame(width: 64, height: 64)
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                        Text(drink.name)
+                    }
                 }
+
             }
             .navigationTitle("Search")
             .navigationBarTitleDisplayMode(.large)

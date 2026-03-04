@@ -20,4 +20,12 @@ final class DetailViewModel {
         }
         return URL(string: urlString)
     }()
+    
+    lazy var name: String = {
+        drink.name
+    }()
+    
+    lazy var preparation: String = {
+        drink.preparation
+    }()
 }
